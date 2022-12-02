@@ -5,14 +5,14 @@ export default function Pergunta(props){
     const {abrirCartao, clicada, pergunta} = props
 
   return(
-    <PerguntaFechada onClick={()=>abrirCartao(pergunta)} clicada={clicada.includes(pergunta)}>
+    <PerguntaCompleta onClick={()=>abrirCartao(pergunta)} clicada={clicada.includes(pergunta)}>
         {props.children}
-    </PerguntaFechada>
+    </PerguntaCompleta>
     )
 }
 
 
-const PerguntaFechada = styled.div`
+const PerguntaCompleta = styled.div`
   width: 300px;
   height: 35px;
   min-height: ${props => props.clicada && '100px'};
