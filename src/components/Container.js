@@ -1,6 +1,7 @@
 import styled from "styled-components"
-import Flashcards from "./Flashcards"
 import logo from "../assets/img/logo.png"
+import Flashcards from "./Flashcards"
+import Contador from "./Contador"
 
 export default function Container(){
     return(
@@ -10,6 +11,7 @@ export default function Container(){
                 <h1>ZapRecall</h1>
             </LogoContainer>
             <Flashcards/>
+            <Contador/>
         </ScreenContainer>
     )
 }
