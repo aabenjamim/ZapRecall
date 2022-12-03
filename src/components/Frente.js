@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export default function Frente(props){
 
-    const {pergunta} = props
+    const {pergunta, listaBotoes, lembrar} = props
 
     return(
         <Traseira>
@@ -10,9 +10,9 @@ export default function Frente(props){
                 <p>{pergunta.answer}</p>
             </Alinhamento>
             <Alinhamento>
-                <Botao cor="#FF3030">Não lemBrei</Botao>
-                <Botao cor="#FF922E">Quase não lemBrei</Botao>
-                <Botao cor="#2FBE34">Zap!</Botao>
+                <Botao cor="#FF3030" onClick={(value)=> lembrar(pergunta, value)} value={listaBotoes[0]}>{listaBotoes[0]}</Botao>
+                <Botao cor="#FF922E" onClick={(value)=> lembrar(pergunta, value)} value={listaBotoes[1]}>{listaBotoes[1]}</Botao>
+                <Botao cor="#2FBE34" onClick={(value)=> lembrar(pergunta, value)} value={listaBotoes[2]}>{listaBotoes[2]}</Botao>
             </Alinhamento>
         </Traseira>
     )
@@ -44,6 +44,7 @@ const Alinhamento = styled.div`
 `
 
 const Traseira = styled.div`
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

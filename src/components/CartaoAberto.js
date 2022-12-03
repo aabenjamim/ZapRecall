@@ -3,7 +3,7 @@ import Frente from "./Frente"
 import {useState} from 'react'
 
 export default function CartaoAberto(props){
-    const {pergunta} = props
+    const {pergunta, listaBotoes, lembrar} = props
 
     const [verResposta, setVerResposta] = useState([])
 
@@ -16,7 +16,7 @@ export default function CartaoAberto(props){
         <>
         {
         verResposta.includes(pergunta.answer)? 
-        <Frente pergunta={pergunta}/> : 
+        <Frente pergunta={pergunta} listaBotoes={listaBotoes} lembrar={lembrar}/> : 
         <Tras pergunta={pergunta} verResposta={verResposta} setVerResposta={setVerResposta}
         virar={virar}/> 
         }
