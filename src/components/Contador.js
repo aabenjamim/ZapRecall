@@ -1,10 +1,12 @@
 import styled from 'styled-components'
 import deck from './deck'
 
-export default function Contador(){
+export default function Contador(props){
+
+    const {contagem, setContagem} = props
     return(
         <Concluidos>
-            {`0/${deck.length}`} CONCLUÍDOS
+            {`${contagem}/${deck.length}`} CONCLUÍDOS
         </Concluidos>
     )
 }

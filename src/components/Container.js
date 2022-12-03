@@ -2,16 +2,22 @@ import styled from "styled-components"
 import logo from "../assets/img/logo.png"
 import Flashcards from "./Flashcards"
 import Contador from "./Contador"
+import { useState } from "react"
 
 export default function Container(){
+
+    const [contagem, setContagem] = useState(0) 
+
+    console.log(contagem)
+
     return(
         <ScreenContainer>
             <LogoContainer>
                 <img src={logo}/>
                 <h1>ZapRecall</h1>
             </LogoContainer>
-            <Flashcards/>
-            <Contador/>
+            <Flashcards contagem={contagem} setContagem={setContagem}/>
+            <Contador contagem={contagem} setContagem={setContagem}/>
         </ScreenContainer>
     )
 }

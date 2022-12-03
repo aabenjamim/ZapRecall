@@ -1,25 +1,23 @@
 import styled from 'styled-components'
-import icone_erro from '../assets/img/icone_erro.png'
-import icone_quase from '../assets/img/icone_quase.png'
-import icone_certo from '../assets/img/icone_certo.png'
 
 export default function CartaoAbertoTras(props){
 
-    const {questao, fechado, setFechado, textoBotao, setTextoBotao} = props
+    const {questao, fechado, setFechado, textoBotao, setTextoBotao, contagem, setContagem} = props
 
 
-    function concluir(texto){
+    function concluir(imagem){
+        setContagem(contagem+1)
+        setTextoBotao([...textoBotao, imagem])
         setFechado([...fechado, questao.answer])
-        setTextoBotao([...textoBotao, texto])
     }
     
     return(
         <CartaoTras>
             <p>{questao.answer}</p>
             <AlinharBotoes>
-                <Botao cor='#FF3030' onClick={()=>concluir(icone_erro)}>Não lembrei</Botao>
-                <Botao cor='#FF922E' onClick={()=>concluir(icone_quase)}>Quase não lembrei</Botao>
-                <Botao cor='#2FBE34' onClick={()=>concluir(icone_certo)}>Zap!</Botao>
+                <Botao cor='#FF3030' onClick={()=>concluir('icone_erro')}>Não lembrei</Botao>
+                <Botao cor='#FF922E' onClick={()=>concluir('icone_quase')}>Quase não lembrei</Botao>
+                <Botao cor='#2FBE34' onClick={()=>concluir('icone_certo')}>Zap!</Botao>
             </AlinharBotoes>
         </CartaoTras>
     )
