@@ -14,11 +14,13 @@ export default function CartaoRiscado(props){
     return(
         <CartaoConcluido cor={textoBotao.includes('icone_certo')? '#2FBE34' :
         (textoBotao.includes('icone_erro')? '#FF3030' : 
-        (textoBotao.includes('icone_quase') && '#FF922E'))}>
-            <p>{`Pergunta ${deck.indexOf(questao) + 1}`}</p>
+        (textoBotao.includes('icone_quase') && '#FF922E'))}
+        data-test="flashcard">
+            <p data-test="flashcard-text">{`Pergunta ${deck.indexOf(questao) + 1}`}</p>
             <img src={textoBotao.includes('icone_certo')? icone_certo :
           (textoBotao.includes('icone_erro')? icone_erro : 
-          (textoBotao.includes('icone_quase') && icone_quase))}/>
+          (textoBotao.includes('icone_quase') && icone_quase))}
+          data-test="no-icon zap-icon partial-icon"/>
         </CartaoConcluido>
     )
 }

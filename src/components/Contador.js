@@ -5,7 +5,7 @@ export default function Contador(props){
 
     const {contagem, setContagem} = props
     return(
-        <Concluidos>
+        <Concluidos data-test="footer">
             {`${contagem}/${deck.length}`} CONCLUÍDOS
         </Concluidos>
     )

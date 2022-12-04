@@ -12,12 +12,18 @@ export default function CartaoAbertoTras(props){
     }
     
     return(
-        <CartaoTras>
-            <p>{questao.answer}</p>
+        <CartaoTras data-test="flashcard">
+            <p data-test="flashcard-text">{questao.answer}</p>
             <AlinharBotoes>
-                <Botao cor='#FF3030' onClick={()=>concluir('icone_erro')}>Não lembrei</Botao>
-                <Botao cor='#FF922E' onClick={()=>concluir('icone_quase')}>Quase não lembrei</Botao>
-                <Botao cor='#2FBE34' onClick={()=>concluir('icone_certo')}>Zap!</Botao>
+                <Botao cor='#FF3030' onClick={()=>concluir('icone_erro')} data-test="no-btn">
+                    Não lembrei
+                </Botao>
+                <Botao cor='#FF922E' onClick={()=>concluir('icone_quase')} data-test="partial-btn">
+                    Quase não lembrei
+                </Botao>
+                <Botao cor='#2FBE34' onClick={()=>concluir('icone_certo')} data-test="zap-btn">
+                    Zap!
+                </Botao>
             </AlinharBotoes>
         </CartaoTras>
     )

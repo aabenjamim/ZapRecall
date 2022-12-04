@@ -11,9 +11,9 @@ export default function CartaoInicial(props){
     }
 
     return(
-        <CartaoFechado onClick={()=> abrir(questao)}>
-            <p>{`Pergunta ${deck.indexOf(questao) + 1}`}</p>
-            <ion-icon name="play-outline"></ion-icon>
+        <CartaoFechado onClick={()=> abrir(questao)} data-test="flashcard">
+            <p data-test="flashcard-text">{`Pergunta ${deck.indexOf(questao) + 1}`}</p>
+            <ion-icon name="play-outline" data-test="play-btn"></ion-icon>
         </CartaoFechado>
     )
 }

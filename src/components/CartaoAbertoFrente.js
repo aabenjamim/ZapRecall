@@ -11,9 +11,9 @@ export default function CartaoAbertoFrente(props){
     }
 
     return(
-        <CartaoFrente>
-            <p>{questao.question}</p>
-            <img src={seta_virar} onClick={verResposta}/>
+        <CartaoFrente data-test="flashcard">
+            <p data-test="flashcard-text">{questao.question}</p>
+            <img src={seta_virar} onClick={verResposta} data-test="turn-btn"/>
         </CartaoFrente>
     )
 }
