@@ -20,7 +20,9 @@ export default function CartaoRiscado(props){
             <img src={textoBotao.includes('icone_certo')? icone_certo :
           (textoBotao.includes('icone_erro')? icone_erro : 
           (textoBotao.includes('icone_quase') && icone_quase))}
-          data-test="no-icon zap-icon partial-icon"/>
+          data-test={textoBotao.includes('icone_certo')? 'zap-icon' :
+          (textoBotao.includes('icone_erro')? 'no-icon' : 
+          (textoBotao.includes('icone_quase') && 'partial-icon'))}/>
         </CartaoConcluido>
     )
 }
